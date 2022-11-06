@@ -1,8 +1,61 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<!--Set the title of the page-->
 {% block title %}Index{% endblock title %}
 
+<!--Add the links of the-->
+{% block stylesheet_link %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock stylesheet_link %}
+
 {% block body %}
-    <h1>This is the index page which is extended from the base template.</h1>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active " data-bs-interval="5000">
+        <img src="{% static '/images/carousal-1.jpg' %}" class="d-block w-100 caro-img" alt="First slide of the carousal.">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>
+            Most of us probably feel we couldn’t be free without newspapers, and that is the real reason we want newspapers to be free.
+          </h2>
+          <p>
+            <i>~By Edward R. Murrow</i>
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="{% static '/images/carousal-2.jpg' %}" class="d-block w-100 caro-img" alt="Second slide of the carousal.">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>
+            When I look back, I am so impressed again with the life-giving power of literature. If I were a young person today, trying to gain a sense of myself in the world, I would do that again by reading, just as I did when I was young.
+          </h2>
+          <p><i>~By Maya Angelou</i></p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="{% static '/images/carousal-3.jpg' %}" class="d-block w-100 caro-img" alt="Third Slide of the carousal.">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>
+            It wasn't until I started reading and found books they wouldn't let us read in school that I discovered you could be insane and happy and have a good life without being like everybody else.
+          </h2>
+          <p>~By ohn Waters </p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+    
 {% endblock body %}
+
+<!--Adding the links of the Javascriptfile-->
+{% block javascript_link %}
+<script src="{% static '/js/index.js' %}"></script>
+{% endblock javascript_link %}
