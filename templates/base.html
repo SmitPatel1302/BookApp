@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %}{% endblock title %}</title> <!--Block to edit the name to the page-->
+
+    {% load static %}
+    <!--Link to css source files-->
+    <link rel="stylesheet" href="{% static '/vendor/bootstrap/css/bootstrap.min.css.map' %}">
+    <link rel="stylesheet" href="{% static '/vendor/fontawesome/css/fontawesome.min.css' %}">
+    {% block stylesheet_link %}{% endblock stylesheet_link %} <!--Block to add link of css file-->
+    {% block stylesheet %}{% endblock stylesheet %} <!--Block to add css code-->
+    
+</head>
+<body>
+    {% block body %}{% endblock body %}
+
+
+    <!--Link to the Javascript source file-->
+    <script src="{% static '/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/vendor/fontawesome/js/fontawesome.min.js' %}"></script>
+
+    {% block javascript_link %}{% endblock javascript_link %} <!--Block to add link of javascript files-->
+    {% block javascript %}{% endblock javascript %} <!--Block to write javascript code-->
+</body>
+</html>
