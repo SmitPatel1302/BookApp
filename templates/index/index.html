@@ -6,7 +6,7 @@
 
 <!--Add the links of the-->
 {% block stylesheet_link %}
-  {% comment %} <!--Link to the templates css files-->
+   <!--Link to the templates css files-->
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{% static '/storeTemplate/css/animate.css' %}">
@@ -14,10 +14,11 @@
   <link rel="stylesheet" href="{% static 'storeTemplate/css/owl.theme.default.min.css'%}">
   <link rel="stylesheet" href="{% static 'storeTemplate/css/magnific-popup.css' %}">
   <link rel="stylesheet" href="{% static 'storeTemplate/css/flaticon.css' %}">
-  <link rel="stylesheet" href="{% static 'storeTemplate/css/style.css' %}"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'storeTemplate/css/style.css' %}">
 
   <!--Link to the page css file-->
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
 {% endblock stylesheet_link %}
 
 {% block body %}
@@ -63,9 +64,9 @@
     </button>
   </div>
   
-  {% comment %} {% include '../index_component.html' %} {% endcomment %}
 
-  {% comment %} <!--New Arrival Section started-->
+ <!--New Arrival Section started-->
+ <div>
   <section class="ftco-section ftco-no-pb template-css">
     <div class="container">
       <div class="row">
@@ -274,12 +275,13 @@
         </div>
       </div>
     </div>
-  </section> {% endcomment %}
+  </section>
+</div>
 {% endblock body %}
 
 <!--Adding the links of the Javascriptfile-->
 {% block javascript_link %}
-  {% comment %} <!--Link to the template Javascript-->
+  <!--Link to the template Javascript-->
   <script src="{% static 'storeTemplate/js/jquery.min.js' %}"></script>
   <script src="{% static 'storeTemplate/js/jquery-migrate-3.0.1.min.js' %}"></script>
   <script src="{% static 'storeTemplate/js/popper.min.js' %}"></script>
@@ -293,7 +295,7 @@
   <script src="{% static 'storeTemplate/js/scrollax.min.js' %}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{% static 'storeTemplate/js/google-map.js' %}"></script>
-  <script src="{% static 'storeTemplate/js/main.js' %}"></script> {% endcomment %}
+  <script src="{% static 'storeTemplate/js/main.js' %}"></script>
 
   <!--Link to the page Javascript-->
   <script src="{% static '/js/index.js' %}"></script>
