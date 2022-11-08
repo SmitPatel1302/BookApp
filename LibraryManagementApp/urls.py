@@ -1,3 +1,5 @@
+# This is the main urls.py
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -12,4 +14,5 @@ urlpatterns = [
     path('store/', include('store.urls')), # Path to redirect for STORE app
     path('about/', include('about.urls')), # Path to redirect for ABOUT app
     path('contact/', include('contactus.urls')), # Path to redirect for CONTACT US app
+    path('librarian/', include('librarian.urls')), # Path to redirect for LIBRARIAN app
 ]

@@ -1,0 +1,10 @@
+.navbar_fix_top
+{
+    position: absolute!important;
+    z-index: 10;
+    width: 100%;
+}
+.nav_opacity
+{
+    background-color: rgba(59, 50, 50, 0.5);
+}
