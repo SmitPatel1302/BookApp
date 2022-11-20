@@ -2,3 +2,54 @@
 {
     max-height: 100vh!important;
 }
+
+/* Template css */
+.template .ftco-section {
+    padding: 6em 0;
+    position: relative;
+  }
+  
+  @media (max-width: 767.98px) {
+    .template .ftco-section {
+      padding: 6em 0;
+    }
+  }
+
+  .template .ftco-no-pb {
+    padding-bottom: 0;
+  }
+  
+  .template .ftco-animate {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+
+  
+.heading-section .subheading {
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 0;
+    color: #b7472a;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    position: relative; }
+  
+    .template .heading-section h2 {
+    font-size: 40px;
+    font-weight: 700; }
+    @media (max-width: 767.98px) {
+        .template .heading-section h2 {
+        font-size: 28px; } }
+  
+        .template .heading-section.heading-section-white .subheading {
+    color: rgba(255, 255, 255, 0.9); }
+  
+    .template .heading-section.heading-section-white h2 {
+    font-size: 40px;
+    color: #fff; }
+  
+  .template .heading-section.heading-section-white p {
+    color: rgba(255, 255, 255, 0.9); }
+  

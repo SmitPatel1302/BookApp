@@ -27,10 +27,10 @@
       <div class="carousel-item active " data-bs-interval="5000">
         <img src="{% static '/images/carousal-1.jpg' %}" class="d-block w-100 caro-img" alt="First slide of the carousal.">
         <div class="carousel-caption d-none d-md-block">
-          <h2 class="text-light">
+          <h2 class="text-light carousel_text">
             Most of us probably feel we couldn’t be free without newspapers, and that is the real reason we want newspapers to be free.
           </h2>
-          <p class="text-light">
+          <p class="text-light carousel_text">
             <i>~By Edward R. Murrow</i>
           </p>
         </div>
@@ -38,19 +38,19 @@
       <div class="carousel-item" data-bs-interval="5000">
         <img src="{% static '/images/carousal-2.jpg' %}" class="d-block w-100 caro-img" alt="Second slide of the carousal.">
         <div class="carousel-caption d-none d-md-block">
-          <h2 class="text-light">
+          <h2 class="text-light carousel_text">
             When I look back, I am so impressed again with the life-giving power of literature. If I were a young person today, trying to gain a sense of myself in the world, I would do that again by reading, just as I did when I was young.
           </h2>
-          <p class="text-light"><i>~By Maya Angelou</i></p>
+          <p class="text-light carousel_text"><i>~By Maya Angelou</i></p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="5000">
         <img src="{% static '/images/carousal-3.jpg' %}" class="d-block w-100 caro-img" alt="Third Slide of the carousal.">
         <div class="carousel-caption d-none d-md-block">
-          <h2 class="text-light">
+          <h2 class="text-light carousel_text">
             It wasn't until I started reading and found books they wouldn't let us read in school that I discovered you could be insane and happy and have a good life without being like everybody else.
           </h2>
-          <p class="text-light">~By ohn Waters </p>
+          <p class="text-light carousel_text">~By ohn Waters </p>
         </div>
       </div>
     </div>
@@ -66,44 +66,51 @@
   
 
  <!--New Arrival Section started-->
- <div>
+ <div class = "template">
   <section class="ftco-section ftco-no-pb template-css">
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+  <div class="col-md-7 heading-section text-center ftco-animate">
+    <span class="subheading">Our Categories</span>
+    <h2>Read as your choce</h2>
+  </div>
+  </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-2 col-md-4 ">
           <div class="sort w-100 text-center ftco-animate">
-            <div class="img" style="background-image: url({% static 'storeTemplate/images/kind-1.jpg' %});"></div>
-            <h3>Brandy</h3>
+            <div class="img" style="background-image: url({% static 'storeTemplate/images/comic_book_logo.png' %});"></div>
+            <h3>Comics  </h3>
           </div>
         </div>
         <div class="col-lg-2 col-md-4 ">
           <div class="sort w-100 text-center ftco-animate">
-            <div class="img" style="background-image: url({% static 'storeTemplate/images/kind-2.jpg' %});"></div>
-            <h3>Gin</h3>
+            <div class="img" style="background-image: url({% static 'storeTemplate/images/news_paper_logo.png' %});"></div>
+            <h3>News Papers</h3>
           </div>
         </div>
         <div class="col-lg-2 col-md-4 ">
           <div class="sort w-100 text-center ftco-animate">
-            <div class="img" style="background-image: url({% static 'storeTemplate/images/kind-3.jpg' %});"></div>
-            <h3>Rum</h3>
+            <div class="img" style="background-image: url({% static 'storeTemplate/images/text_book_logo.png' %});"></div>
+            <h3>Text Books</h3>
           </div>
         </div>
         <div class="col-lg-2 col-md-4 ">
           <div class="sort w-100 text-center ftco-animate">
-            <div class="img" style="background-image: url({% static 'storeTemplate/images/kind-4.jpg' %});"></div>
-            <h3>Tequila</h3>
+            <div class="img" style="background-image: url({% static 'storeTemplate/images/general_knowledge_logo.png' %});"></div>
+            <h3>Geeral knowledge</h3>
           </div>
         </div>
         <div class="col-lg-2 col-md-4 ">
           <div class="sort w-100 text-center ftco-animate">
-            <div class="img" style="background-image: url({% static 'storeTemplate/images/kind-5.jpg' %});"></div>
-            <h3>Vodka</h3>
+            <div class="img" style="background-image: url({% static 'storeTemplate/images/ebooks_logo.png' %});"></div>
+            <h3>E-books</h3>
           </div>
         </div>
         <div class="col-lg-2 col-md-4 ">
           <div class="sort w-100 text-center ftco-animate">
-            <div class="img" style="background-image: url({% static 'storeTemplate/images/kind-6.jpg' %});"></div>
-            <h3>Whiskey</h3>
+            <div class="img" style="background-image: url({% static 'storeTemplate/images/other_logo.png' %});"></div>
+            <h3>Other</h3>
           </div>
         </div>
 
@@ -116,7 +123,7 @@
       <div class="row justify-content-center pb-5">
   <div class="col-md-7 heading-section text-center ftco-animate">
     <span class="subheading">Our Delightful offerings</span>
-    <h2>Tastefully Yours</h2>
+    <h2>New Arrivals</h2>
   </div>
   </div>
       <div class="row">
@@ -195,83 +202,9 @@
             </div>
           </div>
         </div>
-
-        <div class="col-md-3 d-flex">
-          <div class="product ftco-animate">
-            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({% static 'storeTemplate/images/prod-5.jpg' %});">
-              <div class="desc">
-                <p class="meta-prod d-flex">
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                </p>
-              </div>
-            </div>
-            <div class="text text-center">
-              <span class="category">Whiskey</span>
-              <h2>Black Label</h2>
-              <span class="price">$69.00</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 d-flex">
-          <div class="product ftco-animate">
-            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({% static 'storeTemplate/images/prod-6.jpg' %});">
-              <div class="desc">
-                <p class="meta-prod d-flex">
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                </p>
-              </div>
-            </div>
-            <div class="text text-center">
-              <span class="category">Tequila</span>
-              <h2>Macallan</h2>
-              <span class="price">$69.00</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 d-flex">
-          <div class="product ftco-animate">
-            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({% static 'storeTemplate/images/prod-7.jpg' %});">
-              <div class="desc">
-                <p class="meta-prod d-flex">
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                </p>
-              </div>
-            </div>
-            <div class="text text-center">
-              <span class="category">Vodka</span>
-              <h2>Old Monk</h2>
-              <span class="price">$69.00</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 d-flex">
-          <div class="product ftco-animate">
-            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({% static 'storeTemplate/images/prod-8.jpg' %});">
-              <div class="desc">
-                <p class="meta-prod d-flex">
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                  <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                </p>
-              </div>
-            </div>
-            <div class="text text-center">
-              <span class="category">Whiskey</span>
-              <h2>Jameson Irish Whiskey</h2>
-              <span class="price">$69.00</span>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="row justify-content-center">
         <div class="col-md-4">
-          <a href="product.html" class="btn btn-primary d-block">View All Products <span class="fa fa-long-arrow-right"></span></a>
+          <a href="/store" class="btn btn-primary d-block">View All Products <span class="fa fa-long-arrow-right"></span></a>
         </div>
       </div>
     </div>
@@ -293,8 +226,6 @@
   <script src="{% static 'storeTemplate/js/jquery.magnific-popup.min.js' %}"></script>
   <script src="{% static 'storeTemplate/js/jquery.animateNumber.min.js' %}"></script>
   <script src="{% static 'storeTemplate/js/scrollax.min.js' %}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="{% static 'storeTemplate/js/google-map.js' %}"></script>
   <script src="{% static 'storeTemplate/js/main.js' %}"></script>
 
   <!--Link to the page Javascript-->

@@ -1,0 +1,274 @@
+{% extends 'store/storeBase.html' %} {% load static %}
+
+<!--Block to add title of the page-->
+{% block title %} Checkout {% endblock title %}
+
+<!--Block to add body content-->
+{% block body %}
+<section class="ftco-section">
+  <div class="container border border-1" style="background-color: #f4f4f4cc">
+    <div class="row justify-content-center">
+      <div class="col-xl-10 ftco-animate">
+        <div class="container text-center">
+          <h1>Billing Details</h1>
+        </div>
+        <hr />
+      </div>
+      <div class="col-xl-10 ftco-animate my-3">
+        <!--Checkout form start-->
+        <form action="#" class="billing-form">
+          {% csrf_token %}
+          <!--************start Billing Details**********-->
+          <div class="row align-items-end">
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing First name-->
+                <label for="checkout_first_name">Firt Name</label>
+                <input type="text" id="checkout_billing_first_name" name="checkout_first_name" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing Last name-->
+                <label for="checkout_last_name">Last Name</label>
+                <input type="text" id="checkout_billing_last_name" name="checkout_last_name" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing Country-->
+                <label for="checkout_country">Country</label>
+                <input type="text" id="checkout_billing_country" name="checkout_country" class="form-control" placeholder="Country Name" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing State-->
+                <label for="checkout_state">State</label>
+                <input type="text" id="checkout_billing_state" name="checkout_state" class="form-control" placeholder="State Name" />
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing Street-->
+                <label for="checkout_house">Street Address</label>
+                <input type="text" id="checkout_billing_house" name="checkout_house" class="form-control" placeholder="House number and street name/apartment" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing Suit-->
+                <input type="text" id="checkout_billing_suit" name="checkout_suit" class="form-control" placeholder="Suite, unit etc: (optional)" />
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing Town / city-->
+                <label for="checkout_city">Town / City</label>
+                <input type="text" id="checkout_billing_city" name="checkout_city" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing Zip code-->
+                <label for="checkout_zipcode">Postcode / ZIP *</label>
+                <input type="text" id="checkout_billing_zipcode" name="checkout_zipcode" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing Phone-->
+                <label for="checkout_phone">Phone</label>
+                <input type="text" id="checkout_billing_phone" name="checkout_phone" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--Billing Email-->
+                <label for="checkout_email">Email Address</label>
+                <input type="text" id="checkout_billing_email" name="checkout_email" class="form-control" placeholder="" />
+              </div>
+            </div>
+            <div class="w-100"></div>
+
+            <!--Whether shipping details is same as billing details or not-->
+            <div class="form-group">
+                <div class="col-md-12">
+                  <div class="checkbox">
+                    <label><input id="HideShippingAddress" type="checkbox" value="" class="mr-2" checked />Billing address is same as shipping address.</label>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!--************end Billing Details**********-->
+
+          <!--************start Shipping Details**********-->
+          <div id="shipping_details_container" class="row justify-content-center border border-1 d-none">
+            <div class="col-xl-10 ftco-animate">
+              <div class="container">
+                <h3>Shipping Details</h3>
+              </div>
+              <hr />
+            </div>
+            <div class="col-xl-10 ftco-animate my-3">
+              <div class="row align-items-end">    
+                <div class="w-100"></div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <!--Shipping Country-->
+                    <label for="checkout_country">Country</label>
+                    <input type="text" id="checkout_shipping_country" name="checkout_shipping_country" class="form-control" placeholder="Country Name" />
+                  </div>
+                </div>
+    
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <!--Shipping State-->
+                    <label for="checkout_state">State</label>
+                    <input type="text" id="checkout_shipping_state" name="checkout_shipping_state" class="form-control" placeholder="State Name" />
+                  </div>
+                </div>
+    
+                <div class="w-100"></div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <!--Shipping Street-->
+                    <label for="checkout_house">Street Address</label>
+                    <input type="text" id="checkout_shipping_house" name="checkout_shipping_house" class="form-control" placeholder="House number and street name/apartment" />
+                  </div>
+                </div>
+    
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <!--Shipping Suit-->
+                    <input type="text" id="checkout_shipping_suit" name="checkout_shipping_suit" class="form-control" placeholder="Suite, unit etc: (optional)" />
+                  </div>
+                </div>
+    
+                <div class="w-100"></div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <!--Shipping Town / city-->
+                    <label for="checkout_city">Town / City</label>
+                    <input type="text" id="checkout_shipping_city" name="checkout_shipping_city" class="form-control" placeholder="" />
+                  </div>
+                </div>
+    
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <!--Shipping Zip code-->
+                    <label for="checkout_zipcode">Postcode / ZIP *</label>
+                    <input type="text" id="checkout_shipping_zipcode" name="checkout_shipping_zipcode" class="form-control" placeholder="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--************end Shipping Details**********-->
+        </form>
+        <!-- END Checkout Form -->
+
+        <div class="row mt-5 pt-3 d-flex">
+          <div class="col-md-6 d-flex">
+            <div class="cart-detail cart-total p-3 p-md-4">
+              <h3 class="billing-heading mb-4">Cart Total</h3>
+              <p class="d-flex">
+                <span>Subtotal</span>
+                <span>$20.60</span>
+              </p>
+              <p class="d-flex">
+                <span>Delivery</span>
+                <span>$0.00</span>
+              </p>
+              <p class="d-flex">
+                <span>Discount</span>
+                <span>$3.00</span>
+              </p>
+              <hr />
+              <p class="d-flex total-price">
+                <span>Total</span>
+                <span>$17.60</span>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="cart-detail p-3 p-md-4">
+              <h3 class="billing-heading mb-4">Payment Method</h3>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="radio">
+                    <label><input type="radio" name="optradio" class="mr-2" /> Direct Bank Tranfer</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="radio">
+                    <label><input type="radio" name="optradio" class="mr-2" /> Check Payment</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="radio">
+                    <label><input type="radio" name="optradio" class="mr-2" /> Paypal</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="checkbox">
+                    <label><input id="conditionCheck" type="checkbox" value="" class="mr-2" checked /> I have read and accept the terms and conditions</label>
+                  </div>
+                </div>
+              </div>
+              <p><button type="button" id="placeOrderButton" class="btn btn-primary">Place an order</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- .col-md-8 -->
+    </div>
+  </div>
+</section>
+{% endblock body %} 
+
+<!--Block to add the inernal JS-->
+{% block store_extra_js %}
+<script>
+  var conditionCheck = document.getElementById("conditionCheck");
+  var placeOrderButton = document.getElementById("placeOrderButton");
+
+  conditionCheck.addEventListener("change", function () {
+    if (conditionCheck.checked == true) {
+      placeOrderButton.disabled = false;
+    } else if (conditionCheck.checked == false) {
+      placeOrderButton.disabled = true;
+    }
+  });
+
+  var HideShippingAddress = document.getElementById("HideShippingAddress")
+  var shipping_details_container = document.getElementById("shipping_details_container");
+
+  HideShippingAddress.addEventListener("change", function() {
+    if (HideShippingAddress.checked == true) {
+      shipping_details_container.classList.add('d-none');
+    } else if (HideShippingAddress.checked == false) {
+      shipping_details_container.classList.remove('d-none');
+    }
+  });
+</script>
+{% endblock store_extra_js %}

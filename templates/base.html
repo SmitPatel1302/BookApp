@@ -1,84 +1,207 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <!--Block to edit the name to the page-->
 
-  <title>{% block title %}{% endblock title %}</title>
-  <!--Block to edit the name to the page-->
+    {% load static %}
+    <!--Link to add the favocon-->
+    <link rel="icon" type="image/x-icon" href="{% static '/images/navbar_logo.png' %}" />
 
-  {% load static %}
-  <!--Link to add the favocon-->
-  <link rel="icon" type="image/x-icon" href="{% static '/images/navbar_logo.png' %}">
+    <!--Link to css source files-->
+    <link rel="stylesheet" href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/fontawesome/css/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.css' %}" />
 
-  <!--Link to css source files-->
-  <link rel="stylesheet" href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static '/vendor/fontawesome/css/fontawesome.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <!--Block to add link of css file-->
+    {% block stylesheet_link %}{% endblock stylesheet_link %}
 
-  <!--Block to add link of css file-->
-  {% block stylesheet_link %}{% endblock stylesheet_link %}
+    <!--Block to add css code-->
+    {% block stylesheet %}{% endblock stylesheet %}
+  </head>
 
-  <!--Block to add css code-->
-  {% block stylesheet %}{% endblock stylesheet %}
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar_fix_top" id="base_navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" id="navbar_brand" href="#">
+          <img src="{% static '/images/navbar_logo.png' %}" alt="" width="40" height="40" class="d-inline-block align-text-top" />
+          <strong>Book App</strong>
+        </a>
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" id="navbar_toggeler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto" id="navbar-ul">
+            <li class="nav-item">
+              <a class="nav-link active" data-name="home" id="nav_home" aria-current="page" href="/index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-name="home" id="nav_home" aria-current="page" href="/store">Store</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav_about" aria-current="page" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav_contact" aria-current="page" href="/contact">Contact us</a>
+            </li>
+          </ul>
+          <div class="dropdown mx-5" id="nav_dropdown_div">
+            <a class="navbar-brand px-0 mx-0" href="#">
+              <img src="{% static '/images/navbar_logo.png' %}" width="40" height="40" alt="" style="border: 50%" />
+            </a>
+            <button class="btn btn-transpe bg-transperent text-light dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.3rem">Smit Patel</button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li>
+                <button class="dropdown-item" type="button"><i class="fa fa-user" aria-hidden="true"></i> Profile</button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button"><i class="fa fa-heart"></i> Wishlist</button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button"><i class="fa fa-medkit" aria-hidden="true"></i> Admin Panel</button>
+              </li>
+              <hr />
+              <li>
+                <button class="dropdown-item text-danger" type="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    {% block body %}{% endblock body %}
 
-</head>
+    <footer class="ftco-footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2 logo">
+                <a href="#">Book <span>App</span></a>
+              </h2>
+              <p>Far far away, behind the word mountains, far from the countries.</p>
+              <ul class="ftco-footer-social list-unstyled mt-2">
+                <li class="ftco-animate">
+                  <a href="#"><span class="fa fa-twitter"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="fa fa-facebook"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="fa fa-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">My Accounts</h2>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Information</h2>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Quick Link</h2>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a>
+                </li>
+                <li>
+                  <a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                  <li>
+                    <a href="#"><span class="icon fa fa-phone"></span><span class="text">+91 9865321470</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">bookapp@gmail.com</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid px-0 py-5 bg-black">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="mb-0" style="color: rgba(255, 255, 255, 0.5)">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-<body>
+    <!--Block to add link of javascript files-->
+    {% block javascript_link %}{% endblock javascript_link %}
 
-</body>
-<nav class="navbar navbar-expand-lg navbar-dark navbar_fix_top" id="base_navbar">
-
-  <div class="container-fluid">
-    <a class="navbar-brand" id="navbar_brand" href="#">
-      <img src="{% static '/images/navbar_logo.png' %}" alt="" width="40" height="40"
-        class="d-inline-block align-text-top">
-      <strong>Book App</strong>
-    </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto" id="navbar-ul">
-        <li class="nav-item">
-          <a class="nav-link active" data-name="home" id="nav_home" aria-current="page" href="/index">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " data-name="home" id="nav_home" aria-current="page" href="/store">Store</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " id="nav_about" aria-current="page" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " id="nav_contact" aria-current="page" href="/contact">Contact us</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-success border-1 border-secondary" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-{% block body %}{% endblock body %}
-
-<!--Block to add link of javascript files-->
-{% block javascript_link %}{% endblock javascript_link %}
-
-<!--Block to write javascript code-->
-{% block javascript %}{% endblock javascript %}
-<!--Link to the Javascript source file-->
-<script src="{% static '/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<script src="{% static '/vendor/fontawesome/js/fontawesome.min.js' %}"></script>
-<script src="{% static '/vendor/jquery/jquery.js' %}"></script>
-<script src="{% static '/js/base.js'%}"></script>
-
-</body>
-
+    <!--Block to write javascript code-->
+    {% block javascript %}{% endblock javascript %}
+    <!--Link to the Javascript source file-->
+    <script src="{% static '/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/vendor/fontawesome/js/fontawesome.min.js' %}"></script>
+    <script src="{% static '/vendor/jquery/jquery.js' %}"></script>
+    <script src="{% static '/js/base.js'%}"></script>
+  </body>
 </html>
