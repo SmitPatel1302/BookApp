@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--Block to set title of the page-->
     <title>{% block title %}{% endblock title %}</title>
 
     <link rel="icon" type="image/x-icon" href="{% static '/images/navbar_logo.png' %}">
@@ -26,7 +27,10 @@
     <link rel="stylesheet" href="{% static 'storeTemplate/css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'storeTemplate/css/style.css' %}">
 
+    <!--Block to add the external CSS file links-->
 	{% block store_stylesheet_link %}{% endblock store_stylesheet_link %}
+
+    <!--Block to add Intenal CSS-->
 	{% block store_extra_style %}{% endblock store_extra_style %}
 
 </head>
