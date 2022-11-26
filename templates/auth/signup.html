@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'signupTemplate/css/montserrat-font.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'signupTemplate/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/fontawesome/css/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/fontawesome/css/fontawesome.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/fontawesome/css/all.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'signupTemplate/css/style.css' %}" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar_fix_top" id="base_navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" id="navbar_brand" href="#">
+          <img src="{% static '/images/navbar_logo.png' %}" alt="" width="40" height="40" class="d-inline-block align-text-top" />
+          <strong>Book App</strong>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" id="navbar_toggeler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto" id="navbar-ul">
+          </ul>
+          <div class="dropdown mx-5" id="nav_dropdown_div">
+            <span class="text-light" id="navbar_span">Already have an account?</span>
+            <a href="/UserAuthentication/login" id="navbar_anchor" class="text-light">Sign in <i class="fa-solid fa-arrow-right"></i></a>
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-content">
+      <div class="form-v10-content">
+        <form class="form-detail" action="#" method="post" id="myform">
+          <div class="form-left">
+            <h2>General Infomation</h2>
+
+            <div class="form-group">
+              <!--First name-->
+              <div class="form-row form-row-1">
+                <input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name" required />
+              </div>
+
+              <!--Last name-->
+              <div class="form-row form-row-2">
+                <input type="text" name="last_name" id="last_name" class="input-text" placeholder="Last Name" required />
+              </div>
+            </div>
+
+            <!--email-->
+            <div class="form-row">
+              <input type="text" name="company" class="company" id="company" placeholder="Email" required />
+            </div>
+
+            <div class="form-group">
+              <!--Country Code-->
+              <div class="form-row form-row-1">
+                <input type="text" name="code" class="code" id="code" placeholder="Code +" required />
+              </div>
+
+              <!--Mobile Number-->
+              <div class="form-row form-row-2">
+                <input type="text" name="phone" class="phone" id="phone" placeholder="Phone Number" required />
+              </div>
+            </div>
+
+            <!--Password-->
+            <div class="form-row">
+              <input type="text" name="company" class="company" id="company" placeholder="Password" required />
+            </div>
+
+            <!--Confirm password-->
+            <div class="form-row">
+              <input type="text" name="company" class="company" id="company" placeholder="Confirm Password" required />
+            </div>
+          </div>
+
+          <!--************Form Right Section Start************-->
+          <div class="form-right">
+            <!--Heading-->
+            <h2>Address Details(Optional)</h2>
+
+            <!--House no. + Street-->
+            <div class="form-row">
+              <input type="text" name="street" class="street" id="street" placeholder="House no. + Street" required />
+            </div>
+
+            <!--Additional Information-->
+            <div class="form-row">
+              <input type="text" name="additional" class="additional" id="additional" placeholder="Additional Information" required />
+            </div>
+
+            <div class="form-group">
+              <!--Town / City-->
+              <div class="form-row form-row-1">
+                <input type="text" name="zip" class="zip" id="zip" placeholder="Town / City" required />
+              </div>
+
+              <!--Zip code-->
+              <div class="form-row form-row-2">
+                <input type="text" name="zip" class="zip" id="zip" placeholder="Zip Code" required />
+              </div>
+            </div>
+
+            <!--Additional Information-->
+            <div class="form-row">
+              <input type="text" name="additional" class="additional" id="additional" placeholder="Country" required />
+            </div>
+
+            <!--Term and condition checkbox-->
+            <div class="form-checkbox">
+              <label class="container"
+                ><p>I do accept the <a href="#" class="text">Terms and Conditions</a> of your site.</p>
+                <input type="checkbox" id="termAndConditionCheckBox" name="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <!--Submit button-->
+            <div class="form-row-last">
+              <input type="submit" id="signupSubmit" name="register" class="register" value="Register" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="{% static '/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/vendor/fontawesome/js/fontawesome.min.js' %}"></script>
+    <script src="{% static '/vendor/jquery/jquery.js' %}"></script>
+    <script src="{% static 'signupTemplate/js/signup.js' %}"></script>
+    <script>
+      //   var termAndConditionCheckBox = document.getElementById("termAndConditionCheckBox");
+      //   var signupSubmit = document.getElementById("signupSubmit");
+
+      //   termAndConditionCheckBox.addEventListener("change", function () {
+      //     if (termAndConditionCheckBox.checked == true) {
+      //         signupSubmit.disabled = false;
+      //     } else if (termAndConditionCheckBox.checked == false) {
+      //         signupSubmit.disabled = true;
+      //     }
+      //   });
+    </script>
+  </body>
+</html>

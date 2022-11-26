@@ -3,3 +3,4 @@ $(document).ready(function(){
       $('.carousel_text').toggleClass('d-none');
     });
 });
+

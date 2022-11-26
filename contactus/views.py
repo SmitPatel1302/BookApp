@@ -5,4 +5,7 @@ class RenderContactUs(View):
     template_name = 'contactus/contact.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        context = {
+            'nbar':'contact'
+        }
+        return render(request, self.template_name, context)

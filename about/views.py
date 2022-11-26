@@ -5,4 +5,7 @@ class RenderAbout(View):
     template_name = 'about/about.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        context = {
+            'nbar' : 'about'
+        }
+        return render(request, self.template_name, context)

@@ -16,6 +16,7 @@
     <!--Link to css source files-->
     <link rel="stylesheet" href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static '/vendor/fontawesome/css/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/fontawesome/css/all.css' %}" />
     <link rel="stylesheet" href="{% static '/css/base.css' %}" />
 
     <!--Block to add link of css file-->
@@ -39,16 +40,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto" id="navbar-ul">
             <li class="nav-item">
-              <a class="nav-link active" data-name="home" id="nav_home" aria-current="page" href="/index">Home</a>
+              <a class="nav-link {% if nbar == 'home' %}active{% endif %}" data-name="home" id="nav_home" aria-current="page" href="/index">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-name="home" id="nav_home" aria-current="page" href="/store">Store</a>
+              <a class="nav-link {% if nbar == 'store' %}active{% endif %}" data-name="home" id="nav_home" aria-current="page" href="/store">Store</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="nav_about" aria-current="page" href="/about">About</a>
+              <a class="nav-link {% if nbar == 'about' %}active{% endif %}" id="nav_about" aria-current="page" href="/about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="nav_contact" aria-current="page" href="/contact">Contact us</a>
+              <a class="nav-link {% if nbar == 'contact' %}active{% endif %}" id="nav_contact" aria-current="page" href="/contact">Contact us</a>
             </li>
           </ul>
           <div class="dropdown mx-5" id="nav_dropdown_div">
@@ -201,6 +202,7 @@
     <!--Link to the Javascript source file-->
     <script src="{% static '/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static '/vendor/fontawesome/js/fontawesome.min.js' %}"></script>
+    <script src="{% static '/vendor/fontawesome/js/all.js' %}"></script>
     <script src="{% static '/vendor/jquery/jquery.js' %}"></script>
     <script src="{% static '/js/base.js'%}"></script>
   </body>
