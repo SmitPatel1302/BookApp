@@ -200,10 +200,9 @@
     <!--Block to write javascript code-->
     {% block javascript %}{% endblock javascript %}
     <!--Link to the Javascript source file-->
+    <script src="{% static '/vendor/jquery/jquery.js' %}"></script>
     <script src="{% static '/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static '/vendor/fontawesome/js/fontawesome.min.js' %}"></script>
-    <script src="{% static '/vendor/fontawesome/js/all.js' %}"></script>
-    <script src="{% static '/vendor/jquery/jquery.js' %}"></script>
     <script src="{% static '/js/base.js'%}"></script>
   </body>
 </html>
