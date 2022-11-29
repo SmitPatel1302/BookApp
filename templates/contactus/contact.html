@@ -200,12 +200,20 @@
           $("#formSuccessMessage").addClass('d-flex') // make success message display div visible
           $("#formErrorMessage").addClass('d-none') // make error message display div hidden
           
+          // display window to the success message
+          document.getElementById('formSuccessMessage').scrollIntoView({block:"center", behavior: 'smooth' })
+
+          // Clearing the form
+          $("#contactForm").trigger("reset")
         }
         else
         {
           $("#ErrorMessage").html(response['message']) // set message content into the div
           $("#formSuccessMessage").addClass('d-none') // make success message display div hidden
           $("#formErrorMessage").addClass('d-flex') // make success message display div hidden
+
+          // Scrolling window to the error message
+          document.getElementById('formErrorMessage').scrollIntoView({block:"center", behavior: 'smooth' })
         }
       },
       error: function(response){

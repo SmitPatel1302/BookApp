@@ -21,3 +21,7 @@ class RenderSignup(View):
 
     def get(self, request):
         return render(request, self.template_name)
+
+# Class to handele login information data
+class Login(View):
+    pass
