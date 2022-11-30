@@ -412,3 +412,38 @@ body {
 	padding: 0.375rem 0.75rem;
 	font-size: 1.2rem;
 }
+
+
+#registerButton
+{
+	background: #fff;
+	border-radius: 25px;
+	-o-border-radius: 25px;
+	-ms-border-radius: 25px;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.15);
+	-o-box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.15);
+	width: 180px;
+	border: none;
+	margin: 6px 0 50px 0px;
+	cursor: pointer;
+	color: #333;
+	font-weight: 700;
+	font-size: 15px;
+	padding: 12.5px;
+}
+
+#registerButton:hover {
+	background: #ccc;
+}
+
+.disabled
+{
+	background-color: #a8a0a0!important;
+	color:white!important;
+	cursor: default!important;
+}

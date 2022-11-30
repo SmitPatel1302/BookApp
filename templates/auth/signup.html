@@ -53,40 +53,40 @@
             <div class="form-group">
               <!--First name-->
               <div class="form-row form-row-1">
-                <input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name" required />
+                <input type="text" name="signup_first_name" id="signup_first_name" class="input-text" placeholder="First Name" required />
               </div>
 
               <!--Last name-->
               <div class="form-row form-row-2">
-                <input type="text" name="last_name" id="last_name" class="input-text" placeholder="Last Name" required />
+                <input type="text" name="signup_last_name" id="signup_last_name" class="input-text" placeholder="Last Name" required />
               </div>
             </div>
 
             <!--email-->
             <div class="form-row">
-              <input type="text" name="company" class="company" id="company" placeholder="Email" required />
+              <input type="email" name="signup_email" id="signup_email" class="company" placeholder="Email" required />
             </div>
 
             <div class="form-group">
               <!--Country Code-->
               <div class="form-row form-row-1">
-                <input type="text" name="code" class="code" id="code" placeholder="Code +" required />
+                <input type="text" name="signup_code" class="code" id="signup_code" placeholder="Code +" required />
               </div>
 
               <!--Mobile Number-->
               <div class="form-row form-row-2">
-                <input type="text" name="phone" class="phone" id="phone" placeholder="Phone Number" required />
+                <input type="text" name="signup_phone" class="phone" id="signup_phone" placeholder="Phone Number" required />
               </div>
             </div>
 
             <!--Password-->
             <div class="form-row">
-              <input type="text" name="company" class="company" id="company" placeholder="Password" required />
+              <input type="password" name="signup_password" class="company" id="signup_password" placeholder="Password" required />
             </div>
 
             <!--Confirm password-->
             <div class="form-row">
-              <input type="text" name="company" class="company" id="company" placeholder="Confirm Password" required />
+              <input type="password" name="signup_confirm_password" class="company" id="signup_confirm_password" placeholder="Confirm Password" required />
             </div>
           </div>
 
@@ -97,29 +97,29 @@
 
             <!--House no. + Street-->
             <div class="form-row">
-              <input type="text" name="street" class="street" id="street" placeholder="House no. + Street" required />
+              <input type="text" name="signup_street" class="street" id="signup_street" placeholder="House no. + Street" />
             </div>
 
             <!--Additional Information-->
             <div class="form-row">
-              <input type="text" name="additional" class="additional" id="additional" placeholder="Additional Information" required />
+              <input type="text" name="signup_additional" class="additional" id="signup_additional" placeholder="Additional Information" />
             </div>
 
             <div class="form-group">
               <!--Town / City-->
               <div class="form-row form-row-1">
-                <input type="text" name="zip" class="zip" id="zip" placeholder="Town / City" required />
+                <input type="text" name="signup_town" class="zip" id="signup_town" placeholder="Town / City" />
               </div>
 
               <!--Zip code-->
               <div class="form-row form-row-2">
-                <input type="text" name="zip" class="zip" id="zip" placeholder="Zip Code" required />
+                <input type="text" name="signup_zip" class="zip" id="signup_zip" placeholder="Zip Code" />
               </div>
             </div>
 
             <!--Additional Information-->
             <div class="form-row">
-              <input type="text" name="additional" class="additional" id="additional" placeholder="Country" required />
+              <input type="text" name="signup_country" class="additional" id="signup_country" placeholder="Country" />
             </div>
 
             <!--Term and condition checkbox-->
@@ -133,7 +133,9 @@
 
             <!--Submit button-->
             <div class="form-row-last">
-              <input type="submit" id="signupSubmit" name="register" class="register" value="Register" />
+              <!-- <input type="submit" id="signupSubmit" name="register" class="register" value="Register" /> -->
+              <!-- <br> -->
+              <button type="submit" class="register disabled" id="registerButton" disabled>Register</button>
             </div>
           </div>
         </form>
@@ -145,16 +147,18 @@
     <script src="{% static '/vendor/jquery/jquery.js' %}"></script>
     <script src="{% static 'signupTemplate/js/signup.js' %}"></script>
     <script>
-      //   var termAndConditionCheckBox = document.getElementById("termAndConditionCheckBox");
-      //   var signupSubmit = document.getElementById("signupSubmit");
+        var termAndConditionCheckBox = document.getElementById("termAndConditionCheckBox");
+        var signupSubmit = document.getElementById("registerButton");
 
-      //   termAndConditionCheckBox.addEventListener("change", function () {
-      //     if (termAndConditionCheckBox.checked == true) {
-      //         signupSubmit.disabled = false;
-      //     } else if (termAndConditionCheckBox.checked == false) {
-      //         signupSubmit.disabled = true;
-      //     }
-      //   });
+        termAndConditionCheckBox.addEventListener("change", function () {
+          if (termAndConditionCheckBox.checked == true) {
+            registerButton.disabled = false;
+            registerButton.classList.remove('disabled')
+          } else if (termAndConditionCheckBox.checked == false) {
+            registerButton.disabled = true;
+            registerButton.classList.add('disabled')
+          }
+        });
     </script>
   </body>
 </html>
