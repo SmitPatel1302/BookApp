@@ -21,6 +21,8 @@
   </head>
 
   <body>
+
+    <!-- start NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar_fix_top" id="base_navbar">
       <div class="container-fluid">
         <a class="navbar-brand" id="navbar_brand" href="#">
@@ -43,10 +45,40 @@
         </div>
       </div>
     </nav>
+    <!-- end NAVBAR -->
 
     <div class="page-content">
       <div class="form-v10-content">
-        <form class="form-detail" action="#" method="post" id="myform">
+
+        <!--Success message alert box -->
+        {% if success %}
+        <div class="alert alert-success alert-dismissible fade show pb-2 mb-0" role="alert">
+          <strong><i class="fa-solid fa-circle-check"></i> Success!</strong>
+          {% for key , value in message.items %}
+              <span>{{value}}</span>
+          {% endfor %}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        <!--end Success message alert box-->
+
+        <!--Error message alert box -->
+        {% if error %}
+        <div class="alert alert-danger alert-dismissible fade show pb-2 mb-0" role="alert">
+          <strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error Occured!</strong>
+          <br>
+          {% for key , value in message.items %}
+              <span>{{value}}</span>
+          {% endfor %}
+          <!--end Error message alrt box-->
+  
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+
+        <!--Start sign up form-->
+        <form class="form-detail" action="/UserAuthentication/signupData" method="post" id="myform">
+          {% csrf_token %}
           <div class="form-left">
             <h2>General Infomation</h2>
 
@@ -81,12 +113,12 @@
 
             <!--Password-->
             <div class="form-row">
-              <input type="password" name="signup_password" class="company" id="signup_password" placeholder="Password" required />
+              <input type="password" name="signup_password" class="company" id="signup_password" placeholder="Password" minlength="8" required />
             </div>
 
             <!--Confirm password-->
             <div class="form-row">
-              <input type="password" name="signup_confirm_password" class="company" id="signup_confirm_password" placeholder="Confirm Password" required />
+              <input type="password" name="signup_confirm_password" class="company" id="signup_confirm_password" placeholder="Confirm Password" minlength="8" required />
             </div>
           </div>
 

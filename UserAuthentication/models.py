@@ -1,18 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-# Class to store the ADDRESS DETAILS of the user
-# class UserAddress(models.Model):
-#     id = models.AutoField(primary_key=True)
-#     house = models.CharField(max_length=50)
-#     landmark = models.CharField(max_length=50)
-#     town = models.CharField(max_length=50)
-#     country = models.CharField(max_length=50)
-#     zipcode = models.CharField(max_length=10)
-
-
 # Class to store the user's registration data
 class CustomUserAuthentication(AbstractUser):
+    username = models.CharField(max_length=30, unique=False)
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=20, null=False)
     last_name = models.CharField(max_length=20, null=False)
