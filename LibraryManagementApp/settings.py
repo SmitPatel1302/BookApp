@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'about',
     'UserAuthentication',
     'contactus',
+    'librarian',
     'import_export' # Library
 ]
 

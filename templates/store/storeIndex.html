@@ -49,28 +49,42 @@
           <i class="fa badge" style="font-size: 1.7rem;" value=5>&#xf07a;</i>
         </div>
       </div>
+
       <!--start Dropdown-->
-      <div class="dropdown mr-2 ml-4" id="nav_dropdown_div">
-        <a class="navbar-brand px-0 mx-0" href="#">
-          <img src="{% static '/images/navbar_logo.png' %}" width="40" height="40" alt="" style="border: 50%" />
-        </a>
-        <button class="btn btn-transpe bg-transperent text-light dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.3rem">Smit Patel</button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <li>
-            <button class="dropdown-item" type="button"><i class="fa fa-user" aria-hidden="true"></i> Profile</button>
-          </li>
-          <li>
-            <button class="dropdown-item" type="button"><i class="fa fa-heart"></i> Wishlist</button>
-          </li>
-          <li>
-            <button class="dropdown-item" type="button"><i class="fa fa-medkit" aria-hidden="true"></i> Admin Panel</button>
-          </li>
-          <hr />
-          <li>
-            <button class="dropdown-item text-danger" type="button"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</button>
-          </li>
-        </ul>
+      {% if user.is_authenticated %}
+          <div class="dropdown mx-5" id="nav_dropdown_div">
+            <a class="navbar-brand px-0 mx-0" href="#">
+              <img src="{% static '/images/navbar_logo.png' %}" width="40" height="40" alt="" style="border: 50%" />
+            </a>
+            <button class="btn btn-transpe bg-transperent text-light dropdown-toggle text-capitalize" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.3rem"> {{ username }}</button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li>
+                <button class="dropdown-item" type="button"><i class="fas fa-user"></i> Profile</button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button"><i class="fas fa-heart"></i> Wishlist</button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button"><i class="fas fa-medkit" aria-hidden="true"></i>  <a href="/librarian" class="text-dark">Admin Panel</a></button>
+              </li>
+              <hr />
+              <li>
+                <a href="/UserAuthentication/logout" ><button class="dropdown-item text-danger" type="button"><i class="fas fa-sign-out" aria-hidden="true"></i> Sign out</button></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {% else %}
+        <div class="dropdown mx-5" id="nav_dropdown_div">
+          
+          <button class="btn btn-sm btn-transpe bg-transperent text-light" type="button" aria-expanded="false" style="font-size: 1.2rem"><a href="/UserAuthentication/login" class="text-decoration-none text-light font_sanse_serif">Sign in</a></button>
+          <button class="btn btn-sm btn-transpe bg-transperent text-light border border-1-light" type="button" aria-expanded="false" style="font-size: 1.2rem"> <a href="/UserAuthentication/signup" class="text-decoration-none text-light font_sanse_serif">Sign up</a></button>
+          
+          </ul>
+        </div>
       </div>
+        {% endif %}
       <!--end Dropdown-->
 
     </div>

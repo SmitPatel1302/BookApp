@@ -6,7 +6,13 @@ class RenderStore(View):
     template_name = 'store/storeIndex.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        context = {}
+        if request.user.is_authenticated:
+            username = request.user.first_name + " " + request.user.last_name
+            context = {
+                'username' : username
+            }
+        return render(request, self.template_name, context)
 
 
 # Class to render single product page of the item
